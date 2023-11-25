@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Install Nginx using brew
+brew install nginx
+
+# Create a custom index page
+echo "Holberton School for the win!" > /usr/local/var/www/index.html
+
+# Start Nginx
+brew services start nginx
+
+# Sleep to ensure Nginx has started
+sleep 2
+
+# Test Nginx by querying the root with curl
+curl localhost
