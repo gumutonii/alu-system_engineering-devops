@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
-# Install Nginx using brew
-brew install nginx
-
-# Create a custom index page
-echo "Holberton School for the win!" > /usr/local/var/www/index.html
-
-# Start Nginx
-brew services start nginx
-
-# Sleep to ensure Nginx has started
-sleep 2
-
-# Test Nginx by querying the root with curl
-curl localhost
+# installs the reverse proxy - Nginx
+sudo apt update && upgrade
+sudo apt install nginx -y 
+echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx start
